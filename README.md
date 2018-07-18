@@ -1,5 +1,4 @@
 # ResultantTest
-Test for Resultant
 
 Тестовое задание:
 1.	Разработать launchscreen(отобразить любую иконку 64x64 в середине экрана)
