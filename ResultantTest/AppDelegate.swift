@@ -8,14 +8,25 @@
 
 import UIKit
 
+/**
+ *  Главный класс приложения
+ */
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    let APP_CONFIG_PLIST = "config.plist"       // имя файла с конфигурацией приложения
+    var config: NSDictionary?                   // словарь с содержимым конфигурации
+    
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // загрузка конфигурационных данных
+        if let path = Bundle.main.path(forResource: APP_CONFIG_PLIST, ofType: nil) {
+            config = NSDictionary(contentsOfFile: path)
+        }
+        
         return true
     }
 
